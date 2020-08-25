@@ -1,19 +1,14 @@
-name: "build-test"
-on: # rebuild any PRs and main branch changes
-  pull_request:
+on:
   push:
-    branches:
-      - master
-
 jobs:
-  build: # make sure build/ci work properly
+  slack:
     runs-on: ubuntu-latest
+    name: slack
     steps:
-    - uses: actions/checkout@v1
-    - uses: ry-itto/slack_notify_actions@1.0.1
-      env:
-        SLACK_WEBHOOK_URL: 'https://hooks.slack.com/services/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'
-        SLACK_USERNAME: 'deployerBot'
-        SLACK_GITHUB_USER_PAIRS: 'ankitgupta-ingka, WPTUFL9T3'
-        TITLE: ':tada: Success :tada:'
-        BODY: 'ry-itto ry-itto ry-itto'
+      - name: Slack Notification
+        uses: ry-itto/slack_notify_actions@1.0.1
+        env:
+          SLACK_WEBHOOK_URL: 'https://hooks.slack.com/services/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'
+          TITLE: ':tada: Success :tada:'
+          BODY: 'ry-itto'
+          COLOR: '#4D88C2'
