@@ -8,7 +8,7 @@ jobs:
       - name: Slack Notification
         uses: ry-itto/slack_notify_actions@1.0.1
         env:
-          SLACK_WEBHOOK_URL: 'https://hooks.slack.com/services/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'
+          SLACK_WEBHOOK_URL: 'https://hooks.slack.com/services/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'
           TITLE: ':tada: Success :tada:'
           BODY: 'ry-itto'
           COLOR: '#4D88C2'
